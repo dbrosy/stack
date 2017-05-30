@@ -2,7 +2,7 @@ version: '2'
 services:
   wordpress:
     image: wordpress:latest
-    container_name: wordpress
+#    container_name: wordpress
     restart: unless-stopped
     expose:
       - 80
@@ -24,7 +24,7 @@ services:
       WORDPRESS_DB_PASSWORD: "Pa55w0rd"
   db:
     image: "mariadb"
-    container_name: mariadb
+ #   container_name: mariadb
     restart: unless-stopped
     expose:
       - "3306"
