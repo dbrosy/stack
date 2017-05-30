@@ -12,7 +12,7 @@ services:
       - ~/stack/wordpress-data:/wordpress-data
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     links:
-      - db:mariadb
+      - db:mysql
     environment:
       VIRTUAL_HOST: "a.brosy.com"
       VIRTUAL_PORT: "80"
