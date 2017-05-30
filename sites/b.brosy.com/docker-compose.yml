@@ -2,13 +2,14 @@ version: '2'
 services:
   wordpress:
     image: wordpress:latest
-#    container_name: wordpress_b-brosy-com
+    container_name: wordpress
+    restart: unless-stopped
     expose:
       - 80
     depends_on:
       - db
     volumes:
-      - ~/stack/b-brosy-com_wp-data:/wordpress-data
+      - ~/stack/wordpress-data:/wordpress-data
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     links:
       - db:mysql
@@ -23,7 +24,10 @@ services:
       WORDPRESS_DB_PASSWORD: "Pa55w0rd"
   db:
     image: "mariadb"
-#    container_name: mariadb_b-brosy-com
+    container_name: mariadb
+    restart: unless-stopped
+    expose:
+      - "3306"
     environment:
       MYSQL_ROOT_PASSWORD: "Pa55w0rd" 
 
