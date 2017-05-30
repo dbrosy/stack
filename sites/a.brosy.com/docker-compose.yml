@@ -18,8 +18,8 @@ services:
       LETSENCRYPT_HOST: "a.brosy.com"
       LETSENCRYPT_EMAIL: security@brosy.com"
 #      WORDPRESS_DB_NAME: "wordpress"
-#      WORDPRESS_DB_HOST: "db"
-#      WORDPRESS_TABLE_PREFIX: "wp_"
+      WORDPRESS_DB_HOST: "db"
+      WORDPRESS_TABLE_PREFIX: "wp_"
 #      WORDPRESS_DB_PASSWORD: "Pa55w0rd"
   db:
     image: "mariadb"
