@@ -3,6 +3,7 @@ services:
   wordpress:
     image: wordpress:latest
     container_name: wordpress
+    restart: unless-stopped
     expose:
       - 80
     depends_on:
@@ -24,6 +25,7 @@ services:
   db:
     image: "mariadb"
     container_name: mariadb
+    restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: "Pa55w0rd" 
 
