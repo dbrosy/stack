@@ -5,8 +5,6 @@ services:
     container_name: portainer
     restart: unless-stopped
     command: --templates http://templates/templates.json
-    ports:
-      - 9000
     expose:
       - 9000
     networks:
@@ -16,6 +14,7 @@ services:
       - ~/stack/portainer/data:/data
     environment:
       VIRTUAL_HOST: manage.brosy.com
+      VIRTUAL_PORT: 9000
 
   templates:
     image: portainer/templates
