@@ -2,7 +2,7 @@ version: '2'
 services:
   wordpress:
     image: wordpress:latest
-    container_name: wordpress_b-brosy-com
+#    container_name: wordpress_b-brosy-com
     expose:
       - 80
     depends_on:
@@ -23,7 +23,7 @@ services:
       WORDPRESS_DB_PASSWORD: "Pa55w0rd"
   db:
     image: "mariadb"
-    container_name: mariadb_b-brosy-com
+#    container_name: mariadb_b-brosy-com
     environment:
       MYSQL_ROOT_PASSWORD: "Pa55w0rd" 
 
