@@ -2,20 +2,20 @@ version: '2'
 services:
   wordpress:
     image: wordpress:latest
-    container_name: wordpress_a_brosy_com
+    container_name: wordpress
     expose:
       - 80
     depends_on:
       - db
     volumes:
-      - ~/stack/abrosycom_wordpress-data:/wordpress-data
+      - ~/stack/wordpress-data:/wordpress-data
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
     links:
       - db:mysql
     environment:
-      VIRTUAL_HOST: "manage.brosy.com"
+      VIRTUAL_HOST: "a.brosy.com"
       VIRTUAL_PORT: "80"
-      LETSENCRYPT_HOST: "manage.brosy.com"
+      LETSENCRYPT_HOST: "a.brosy.com"
       LETSENCRYPT_EMAIL: security@brosy.com"
 #      WORDPRESS_DB_NAME: "wordpress"
       WORDPRESS_DB_HOST: "db"
