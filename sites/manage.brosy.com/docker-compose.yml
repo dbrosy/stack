@@ -6,7 +6,9 @@ services:
     restart: unless-stopped
     command: --templates http://templates/templates.json
     ports:
-      - 9000:9000
+      - 9000
+    expose:
+      - 9000
     networks:
       - backend
     volumes:
