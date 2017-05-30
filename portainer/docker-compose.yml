@@ -1,9 +1,9 @@
 version: '2'
 services:
   portainer:
-    restart: always
     image: portainer/portainer
     container_name: portainer
+    restart: unless-stopped
     command: --templates http://templates/templates.json
     ports:
       - 9000:9000
@@ -18,12 +18,14 @@ services:
   templates:
     image: portainer/templates
     container_name: "portainer-templates"
+    restart: unless-stopped
     networks:
       - backend
 
   watchtower:
     image: centurylink/watchtower
     container_name: "portainer-watchtower"
+    restart: unless-stopped
     command: --cleanup portainer-app
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
