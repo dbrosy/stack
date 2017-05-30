@@ -11,7 +11,7 @@ services:
       - backend
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ~/hosted/stack/portainer/data:/data
+      - ~/stack/portainer/data:/data
     environment:
       VIRTUAL_HOST: hosted.brosy.com
 
